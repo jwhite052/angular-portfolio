@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { PostComponent } from './posts/post/post.component';
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    FlexLayoutModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
