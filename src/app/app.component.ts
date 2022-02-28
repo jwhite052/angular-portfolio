@@ -23,7 +23,7 @@ export class AppComponent implements AfterViewInit {
   openDialog() {
     const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = true;
+    dialogConfig.disableClose = false;
     dialogConfig.autoFocus = false;
     dialogConfig.panelClass = ['profile-dialog-panel', 'animate__animated', 'animate__fadeInDownBig'];
     dialogConfig.backdropClass = ['profile-dialog-backdrop'];
