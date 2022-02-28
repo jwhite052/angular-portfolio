@@ -15,10 +15,12 @@ export class DataStorageService {
   ) { }
 
   storePosts() {
-    console.log('store!');
+    if (this.postsService.getPosts().length === 0) {
+      return;
+    }
     this.http.put('https://ng-portfolio-blog-posts-default-rtdb.firebaseio.com/posts.json', this.postsService.getPosts())
       .subscribe(
-        (response) => {
+        (response: any) => {
             console.log(response);
         }
       );
@@ -28,6 +30,7 @@ export class DataStorageService {
     return this.http.get<Post[]>('https://ng-portfolio-blog-posts-default-rtdb.firebaseio.com/posts.json')
       .pipe(
         tap((posts: Post[]) => {
+          console.log(posts);
           this.postsService.setPosts(posts);
         })
       );
