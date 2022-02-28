@@ -10,11 +10,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule}  from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+
 import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
 
 
 @NgModule({
@@ -23,7 +26,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomeComponent,
     BlogComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    ProfileDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +39,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
+    MatDialogModule,
     FlexLayoutModule 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ProfileDialogComponent]
 })
 export class AppModule { }
