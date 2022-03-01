@@ -18,6 +18,10 @@
       <a mat-list-item href="https://codepen.io/jashuawhite/" target="_blank"><i class="fa-brands fa-codepen"></i> Codepen</a>
       <a mat-list-item href="https://www.linkedin.com/in/jashuawhite" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
     </mat-nav-list>
+    <mat-nav-list class="sidebar-nav-list">
+      <a mat-list-item (click)="onStorePosts()">Store Posts</a>
+      <a mat-list-item (click)="onFetchPosts()">Fetch Posts</a>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content style="min-height: 100vh">
     <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">

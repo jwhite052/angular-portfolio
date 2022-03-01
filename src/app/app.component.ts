@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
+import { DataStorageService } from './shared/data-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements AfterViewInit {
 
   title = 'angular-portfolio';
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private dataStorageService: DataStorageService) {}
 
   ngAfterViewInit() {
     // this.sidenav.open();
@@ -29,5 +30,18 @@ export class AppComponent implements AfterViewInit {
     dialogConfig.backdropClass = ['profile-dialog-backdrop'];
 
     this.dialog.open(ProfileDialogComponent, dialogConfig);
+  }
+
+  onStorePosts() {
+    this.dataStorageService.storePosts();
+  }
+
+  onFetchPosts() {
+    this.dataStorageService.fetchPosts()
+      .subscribe(
+        (response) => {
+            console.log(response);
+        }
+      );
   }
 }

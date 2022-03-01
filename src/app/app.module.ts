@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,9 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
-
 
 @NgModule({
   declarations: [
@@ -40,7 +40,8 @@ import { ProfileDialogComponent } from './profile-dialog/profile-dialog.componen
     MatSidenavModule,
     MatListModule,
     MatDialogModule,
-    FlexLayoutModule 
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
