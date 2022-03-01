@@ -6,8 +6,6 @@
 </div>
 <article class="post" itemtype="http://schema.org/BlogPosting">
   <div class="post-content" itemprop="articleBody">
-    <div class="post-container">
-      {{ post.content }}
-    </div>
+    <div class="post-container" [innerHTML]="post.content"></div>
   </div>
 </article>
