@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { tap } from 'rxjs/operators';
 import { Post } from '../posts/post.model';
 import { PostsService } from '../posts/posts.service';
+import { environment } from './../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class DataStorageService {
     if (this.postsService.getPosts().length === 0) {
       return;
     }
-    this.http.put('https://ng-portfolio-blog-posts-default-rtdb.firebaseio.com/posts.json', this.postsService.getPosts())
+    this.http.put(environment.firebase.postsPutEndpoint, this.postsService.getPosts())
       .subscribe(
         (response: any) => {
             console.log(response);
@@ -27,7 +28,7 @@ export class DataStorageService {
   }
 
   fetchPosts() {
-    return this.http.get<Post[]>('https://ng-portfolio-blog-posts-default-rtdb.firebaseio.com/posts.json')
+    return this.http.get<Post[]>(environment.firebase.postsGetEndpoint)
       .pipe(
         tap((posts: Post[]) => {
           console.log(posts);
