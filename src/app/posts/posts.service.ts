@@ -13,6 +13,11 @@ export class PostsService {
 
   constructor() { }
 
+  getPost(index: number) {
+    console.log(this.posts[index]);
+    return this.posts[index];
+  }
+
   getPosts() {
     return this.posts.slice();
   }

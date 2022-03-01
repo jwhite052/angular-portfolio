@@ -1,1 +1,13 @@
-<p>post works!</p>
+<div class="hero" fxLayout="column" fxLayoutAlign="center center">
+  <h1>{{ post.title }}</h1>
+  <div class="meta">
+    <time class="date">{{ post.date }}</time>
+  </div>
+</div>
+<article class="post" itemtype="http://schema.org/BlogPosting">
+  <div class="post-content" itemprop="articleBody">
+    <div class="post-container">
+      {{ post.content }}
+    </div>
+  </div>
+</article>
