@@ -13,6 +13,16 @@ export class PostsService {
 
   constructor() { }
 
+  getPost(id: string) {
+    let p = {};
+    this.posts.forEach((post) => {
+      if (post['id'] === id) {
+        p = post;
+      }
+    });
+    return <Post>p;
+  }
+
   getPosts() {
     return this.posts.slice();
   }

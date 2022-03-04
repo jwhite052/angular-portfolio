@@ -3,6 +3,8 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
 import { DataStorageService } from './shared/data-storage.service';
+import { PostsService } from './posts/posts.service';
+import { postsLocalContent } from './posts/posts-local-content';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,7 @@ export class AppComponent implements AfterViewInit {
 
   title = 'angular-portfolio';
 
-  constructor(private dialog: MatDialog, private dataStorageService: DataStorageService) {}
+  constructor(private dialog: MatDialog, private dataStorageService: DataStorageService, private postsService: PostsService) {}
 
   ngAfterViewInit() {
     // this.sidenav.open();
@@ -43,5 +45,9 @@ export class AppComponent implements AfterViewInit {
             console.log(response);
         }
       );
+  }
+
+  onLoadLocalPosts() {
+    this.postsService.setPosts(postsLocalContent);
   }
 }
