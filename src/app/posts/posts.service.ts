@@ -13,9 +13,14 @@ export class PostsService {
 
   constructor() { }
 
-  getPost(index: number) {
-    console.log(this.posts[index]);
-    return this.posts[index];
+  getPost(id: string) {
+    let p = {};
+    this.posts.forEach((post) => {
+      if (post['id'] === id) {
+        p = post;
+      }
+    });
+    return <Post>p;
   }
 
   getPosts() {

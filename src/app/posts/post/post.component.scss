@@ -1,4 +1,15 @@
 .hero {
-  height: 200px;
+  height: 500px;
   background-color: mediumseagreen;
+}
+
+.hero__title {
+  font-size: 3em;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+.post-container {
+  max-width: 600px;
+  padding: 60px 20px;
 }

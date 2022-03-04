@@ -10,7 +10,7 @@ import { PostsService } from '../posts.service';
 })
 export class PostComponent implements OnInit {
 
-  id: number;
+  id: string;
   post: Post;
 
   constructor(
@@ -21,7 +21,7 @@ export class PostComponent implements OnInit {
     this.activatedRoute.params
     .subscribe(
       (params: Params) => {
-        this.id = +params['id'];
+        this.id = params['id'];
         console.log('id', this.id);
         this.post = this.postsService.getPost(this.id);
       }
