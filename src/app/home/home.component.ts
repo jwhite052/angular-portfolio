@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Post } from '../posts/post.model';
 import { PostsService } from '../posts/posts.service';
@@ -16,13 +17,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
-    this.posts = this.postsService.getPosts();
-    this.subscription = this.postsService.postsChanged
-      .subscribe(
-        (posts: Post[]) => {
-          this.posts = posts;
-        }
-      )
+    this.posts = this.postsService.getPostsByCategory('blog');
+    this.subscription = this.postsService.postsChanged.subscribe(() => {
+      this.posts = this.postsService.getPostsByCategory('blog');
+    });
   }
 
   ngOnDestroy() {

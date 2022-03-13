@@ -5,6 +5,7 @@ export class Post {
   public author: string;
   public date: string;
   public category: string;
+  public tags: string[];
 
   constructor(
     title: string,
@@ -12,6 +13,7 @@ export class Post {
     author: string,
     date: string,
     category: string,
+    tags: string[],
     id?: string
   ) {
     this.title = title;
@@ -19,6 +21,7 @@ export class Post {
     this.author = author;
     this.date = date;
     this.category = category;
+    this.tags = tags;
     this.id = id || this.createId(title);
 
   }

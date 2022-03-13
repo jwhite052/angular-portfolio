@@ -19,6 +19,8 @@ import { BlogComponent } from './blog/blog.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
 import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProjectComponent } from './projects/project/project.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ProfileDialogComponent } from './profile-dialog/profile-dialog.componen
     BlogComponent,
     PostsComponent,
     PostComponent,
-    ProfileDialogComponent
+    ProfileDialogComponent,
+    ProjectsComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
