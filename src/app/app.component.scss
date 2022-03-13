@@ -10,6 +10,15 @@
   display: inline-block;
 }
 
+.main__footer {
+  color: #9eabb3;
+  font-size: 1em;
+  text-align: center;
+  margin-top: 70px;
+  height: auto;
+  padding: 20px;
+}
+
 ::ng-deep .profile-dialog-panel {
   position: relative !important;
   max-width: 400px !important;
