@@ -19,6 +19,7 @@ import { BlogComponent } from './blog/blog.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
 import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProfileDialogComponent } from './profile-dialog/profile-dialog.componen
     BlogComponent,
     PostsComponent,
     PostComponent,
-    ProfileDialogComponent
+    ProfileDialogComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
