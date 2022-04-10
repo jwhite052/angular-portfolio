@@ -1,22 +1,19 @@
-import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Post } from '../posts/post.model';
 import { PostsService } from '../posts/posts.service';
-import { EmbedCodePenService } from '../shared/embed-code-pen.service';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements OnInit, AfterViewChecked, OnDestroy {
+export class ProjectsComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription;
   projects: Post[];
 
-  constructor(
-    private postsService: PostsService,
-    private embedCodePenService: EmbedCodePenService) { }
+  constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
     this.projects = this.postsService.getPostsByCategory('project');
@@ -24,10 +21,6 @@ export class ProjectsComponent implements OnInit, AfterViewChecked, OnDestroy {
     this.subscription = this.postsService.postsChanged.subscribe(() => {
       this.projects = this.postsService.getPostsByCategory('project');
     });
-  }
-
-  ngAfterViewChecked() {
-    this.embedCodePenService.init();
   }
 
   ngOnDestroy(): void {

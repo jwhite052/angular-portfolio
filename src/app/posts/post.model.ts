@@ -23,10 +23,9 @@ export class Post {
     this.category = category;
     this.tags = tags;
     this.id = id || this.createId(title);
-
   }
 
   createId(title: string): string {
-    return title.toLowerCase().replace(' ', '-');
+    return title.toLowerCase().replace(/ /g, '-');
   }
 }
