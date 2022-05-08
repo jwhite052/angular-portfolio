@@ -1,0 +1,32 @@
+<h1> Reactive Contact Form Example </h1>
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Full name</mat-label>
+    <input matInput type = "text" name = "fullName" placeholder = "Your full name" formControlName="fullName" [ngClass]="{ 'is-invalid': submitted && f['fullName'].errors }">
+    <div *ngIf="submitted && f['fullName'].errors" class="invalid-feedback">
+      <mat-error *ngIf="f['fullName'].errors['required']">Title is required</mat-error>
+    </div>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>E-mail</mat-label>
+    <input matInput type = "email" name = "email" placeholder = "Your email" formControlName="email" >
+    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+      <mat-error *ngIf="f['email'].errors['required']">E-mail is required</mat-error >
+      <mat-error *ngIf="f['email'].errors['email']">E-mail is invalid</mat-error >
+    </div>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Message</mat-label>
+    <textarea matInput name = "message" placeholder = "Your message" formControlName="message" ></textarea>
+    <div *ngIf="submitted && f['message'].errors" class="invalid-feedback">
+      <mat-error *ngIf="f['message'].errors['required']">Message is required</mat-error>
+      <mat-error *ngIf="f['message'].errors['minlength']">Min length is 10 characters</mat-error>
+    </div>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="basic" type="submit" value="Send">Send</button>
+  <button mat-raised-button color="basic">Reset</button>
+</form>

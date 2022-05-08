@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule}  from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { HomeComponent } from './home/home.component';
 import { BlogComponent } from './blog/blog.component';
@@ -20,6 +24,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
 import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
 import { ContactComponent } from './contact/contact.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +34,15 @@ import { ContactComponent } from './contact/contact.component';
     PostsComponent,
     PostComponent,
     ProfileDialogComponent,
-    ContactComponent
+    ContactComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatSliderModule,
     MatToolbarModule,
     MatIconModule,
@@ -42,6 +50,8 @@ import { ContactComponent } from './contact/contact.component';
     MatSidenavModule,
     MatListModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
     FlexLayoutModule,
     HttpClientModule
   ],
