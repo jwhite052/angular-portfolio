@@ -1,11 +1,11 @@
 <div class="hero" fxLayout="column" fxLayoutAlign="center center">
-  <h1 class="hero__title">{{ post.title }}</h1>
+  <h1 class="hero__title">{{ project.title }}</h1>
   <div class="meta">
-    <time class="date">{{ post.date }}</time>
+    <time class="date">{{ project.date }}</time>
   </div>
 </div>
 <article class="post" itemtype="http://schema.org/BlogPosting">
   <div class="post-content" itemprop="articleBody" fxLayout="row" fxLayoutAlign="center">
-    <div class="post-container" [innerHTML]="post.content"></div>
+    <div class="post-container" [innerHTML]="content"></div>
   </div>
 </article>

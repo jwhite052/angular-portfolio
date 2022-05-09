@@ -1,29 +1,29 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Post } from '../posts/post.model';
 import { PostsService } from '../posts/posts.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-projects',
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.scss']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class ProjectsComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription;
-  posts: Post[];
+  projects: Post[];
 
   constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
-    this.posts = this.postsService.getPostsByCategory('blog');
+    this.projects = this.postsService.getPostsByCategory('project');
+    console.log('Called projects.component...', this.projects);
     this.subscription = this.postsService.postsChanged.subscribe(() => {
-      this.posts = this.postsService.getPostsByCategory('blog');
+      this.projects = this.postsService.getPostsByCategory('project');
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 }

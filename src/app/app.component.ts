@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, HostListener, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
@@ -49,5 +49,12 @@ export class AppComponent implements AfterViewInit {
 
   onLoadLocalPosts() {
     this.postsService.setPosts(postsLocalContent);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  sizeChange(event: any) {
+    if (window.innerWidth < 400) {
+      this.sidenav.close();
+    }
   }
 }

@@ -19,8 +19,14 @@ a:hover {
 }
 
 /* Material */
+
 .mat-body, .mat-body-1, .mat-typography {
   letter-spacing: normal;
   font: 400 16px/26px Roboto, "Helvetica Neue", sans-serif;
 }
 
+/* Utilities */
+
+.u-responsive-image {
+  width: 100%;
+}

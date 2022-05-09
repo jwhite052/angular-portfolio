@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { DataStorageService } from '../shared/data-storage.service';
 import { Post } from './post.model';
 
 @Injectable({
@@ -25,6 +24,13 @@ export class PostsService {
 
   getPosts() {
     return this.posts.slice();
+  }
+
+  getPostsByCategory(cateogry: string): Post[] {
+    let filtered = this.posts.filter((post) => {
+      return post.category === cateogry;
+    });
+    return filtered;
   }
 
   setPosts(posts: Post[]) {

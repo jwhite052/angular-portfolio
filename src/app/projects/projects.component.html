@@ -1,0 +1,12 @@
+<main class="page" fxLayout="column" fxLayoutAlign="center center">
+  <div class="hero" fxLayout="column" fxLayoutAlign="center center">
+    <h1 class="hero__title">Projects</h1>
+  </div>
+  <div class="page__container">
+    <div class="recent-posts" fxLayout="row wrap">
+      <a *ngFor="let project of projects" [routerLink]="project.id" class="project-card">
+        <h2 class="project-card__title">{{ project.title }}</h2>
+      </a>
+    </div>
+  </div>
+</main>

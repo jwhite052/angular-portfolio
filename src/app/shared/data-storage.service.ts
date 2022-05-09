@@ -11,7 +11,8 @@ interface PostObject {
     content: string,
     author: string,
     date: string,
-    category: string
+    category: string,
+    tags: string
   }
 }
 
@@ -29,9 +30,7 @@ export class DataStorageService {
     if (this.postsService.getPosts().length === 0) {
       return;
     }
-
-    // console.log('storePosts', this.createPostsObject(this.postsService.getPosts()));
-
+    
     this.http.put(environment.firebase.postsPutEndpoint, this.createPostsObject(this.postsService.getPosts()))
       .subscribe(
         (response: any) => {
@@ -44,6 +43,7 @@ export class DataStorageService {
     return this.http.get<Post[]>(environment.firebase.postsGetEndpoint)
       .pipe(
         tap((posts: any) => {
+          console.log('Called fetchPosts() in data-storage.service ...');
           this.postsService.setPosts(this.createPostsArray(posts));
         })
       );
@@ -57,6 +57,7 @@ export class DataStorageService {
         title: post.title,
         date: post.date,
         category: post.category,
+        tags: post.tags.join(','),
         content: post.content,
         author: post.author
       };
@@ -75,6 +76,7 @@ export class DataStorageService {
         posts[key].author,
         posts[key].date,
         posts[key].category,
+        posts[key].tags.split(','),
         key));
     });
 
