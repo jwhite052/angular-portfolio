@@ -1,12 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font: 400 16px/26px Roboto, "Helvetica Neue", sans-serif; }
+
+.page {
+  padding: 50px 70px;
+}
+
+a, a:active, a:hover, a:visited {
+  cursor: pointer;
+  color: #349ef3;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #349ef3;
+  text-decoration: underline;
+}
 
 /* Material */
+
 .mat-body, .mat-body-1, .mat-typography {
-  font: 400 18px/28px Roboto, "Helvetica Neue", sans-serif;
   letter-spacing: normal;
+  font: 400 16px/26px Roboto, "Helvetica Neue", sans-serif;
 }
 
 /* Utilities */

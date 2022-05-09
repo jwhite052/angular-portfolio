@@ -44,8 +44,11 @@
         <img class="navbar-profile-icon" src="../../assets/jw-profile-photo.jpeg" (click)="openDialog()" alt="Profile photo">
       </div>
     </mat-toolbar>
-    <main>
+    <main class="main">
       <router-outlet></router-outlet>
+      <footer id="footer" class="main__footer" faLayout="column" faLayoutAlign="center center">
+          © 2022 <a href="http://www.jashuawhite.com">Jashua R. White</a>.<br>Made with <i class="fa fa-heart" style="color: red;"></i>. Feuled by <i class="fa fa-coffee" style="color: brown;"></i>.<br> All Rights Reserved
+      </footer>
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
