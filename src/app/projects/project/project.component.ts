@@ -23,11 +23,9 @@ export class ProjectComponent implements OnInit, AfterViewChecked {
     private domSanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    console.log('Called onInit project.component...')
     this.activatedRoute.params
     .subscribe(
       (params: Params) => {
-        console.log('Called activatedRoute project.component...')
         this.id = params['id'];
         this.project = this.postsService.getPost(this.id);
         this.content = this.domSanitizer.bypassSecurityTrustHtml(this.project.content);
