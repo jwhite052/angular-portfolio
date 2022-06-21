@@ -1,8 +1,8 @@
 <div class="page">
   <h1>Contact</h1>
-  <p>Have a question or would like to work together? Send a message using the form below and I'll get back to you shortly.</p>
-  <br>
   <form class="contact-form" *ngIf="!success" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <p>Have a question or would like to work together? Send a message using the form below.</p>
+    <br>
     <mat-form-field appearance="outline">
       <mat-label>Full name</mat-label>
       <input matInput type = "text" name = "fullName" placeholder = "Your full name" formControlName="fullName" [ngClass]="{ 'is-invalid': submitted && f['fullName'].errors }">
