@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
 
 @Component({
   selector: 'app-contact-form',
@@ -11,6 +10,7 @@ export class ContactFormComponent implements OnInit {
 
   contactForm: FormGroup;
   submitted = false;
+  success = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -33,7 +33,8 @@ export class ContactFormComponent implements OnInit {
     if (this.contactForm.invalid) {
       console.log('Not valid!');
     } else {
-      console.log('Your form data : ', this.contactForm.value );
+      console.log('Your form data : ', this.contactForm.value);
+      this.success = true;
     }
   }
 }
